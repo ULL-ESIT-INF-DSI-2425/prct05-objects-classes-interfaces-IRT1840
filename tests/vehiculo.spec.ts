@@ -47,6 +47,22 @@ describe('Moto', () => {
 
 });
 
+
+describe('Parking', () => {
+    test('Debe crear un Parking con los valores adecuados', () => {
+        const parking1 = new Parking(10, 10);
+        expect(parking1.getEspaciosCoches()).toBe(10);
+        expect(parking1.getEspaciosMotos()).toBe(10);
+        parking1.setEspaciosCoches(5)
+        expect(parking1.getEspaciosCoches()).toBe(5)
+
+
+
+    });
+
+        
+
+});
 /**
  * 
  * 

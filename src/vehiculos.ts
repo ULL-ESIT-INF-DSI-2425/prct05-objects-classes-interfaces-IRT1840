@@ -6,6 +6,13 @@ export abstract class Vehiculo {
 
     private cilindrada: number;
 
+    /**
+     * 
+     * @param matricula La matricula del vehiculo
+     * @param marca La marca del vehiculo
+     * @param altura LA altura del vehiculo
+     * @param cilindrada La cilindrada del vehiculo
+     */
     constructor(matricula: string, marca : string, altura : number, cilindrada : number) {
         this.matricula = matricula
         this.marca = marca
@@ -170,8 +177,69 @@ export class Moto extends Vehiculo{
 }
 
 
-
+type Entrada = [Number,String]
 export class Parking {
+    private _espaciosCoches : number
+    private _espaciosMotos : number
+    private _cochesEstacionados : Coche[] = []
+    private _motosEstacionadas : Moto[] = []
+
+    /**
+     * 
+     * @param espaciosCoches 
+     * @param espaciosMotos 
+     */
+    constructor(espaciosCoches : number, espaciosMotos : number) {
+        this._espaciosCoches = espaciosCoches
+        this._espaciosMotos = espaciosMotos
+    }
+    /**
+     * 
+     * @returns 
+     */
+    getEspaciosCoches () {
+        return this._espaciosCoches
+    }
+    /**
+     * 
+     * @returns 
+     */
+    getEspaciosMotos() {
+        return this._espaciosCoches
+    }
+    /**
+     * 
+     * @param nuevo 
+     */
+    setEspaciosCoches(nuevo : number) {
+        this._espaciosCoches = nuevo
+    }
+    /**
+     * 
+     * @param nuevo 
+     */
+    setEspaciosMotos(nuevo: number) {
+        this._espaciosMotos = nuevo
+    }
+
+    añadirCoche(nuevo : Coche, fecha: string) {
+        this._cochesEstacionados.push(nuevo)
+    }
+    añadirMoto(nuevo : Moto) {
+        this._motosEstacionadas.push(nuevo)
+    }
+
+    /**
+     * Retorn
+     */
+    cochesDisponibles() : void {
+        console.log("Los coches disponibles son: ")
+        this._cochesEstacionados.forEach(coche => {
+            console.log(coche.getMatricula())
+        }) 
+        
+    }
+    
 
 
 }
