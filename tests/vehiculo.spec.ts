@@ -11,6 +11,8 @@ describe('Coche', () => {
         expect(coche1.getcilindrada()).toBe(200);
         expect(coche1.getNPuertas()).toBe(4);
         expect(coche1.getEspacioMaletero()).toBe(3);
+        coche1.setAltura(3)
+        expect(coche1.getAltura()).toBe(3)
 
         
 
@@ -31,13 +33,16 @@ describe('Moto', () => {
         expect(moto1.getAltura()).toBe(25);
         expect(moto1.getcilindrada()).toBe(200);
         expect(moto1.getPata()).toBe(true);
-        expect(moto1.getChaqueta()).toBe("Marrón");
+        expect(moto1.getChaqueta()).toBe("Marron");
+
+        moto1.setChaqueta("Negra")
+        expect(moto1.getChaqueta()).toBe("Negra")
 
     });
     
     test('Debe mostrar adecuadamente su resumen', () => {
         const moto1 = new Moto("FNF", "Volkswagen", 25,200, true, "Marron");
-        expect(moto1.datos()).toBe("La moto con matricula FNF de la marca Volkswagen tiene una altura de 25 una cilindrada de 200 y una chaqueta de cuero de color marron");
+        expect(moto1.datos()).toBe("La moto con matricula FNF de la marca Volkswagen tiene una altura de 25 una cilindrada de 200 y una chaqueta de cuero de color Marron");
     });
 
 });

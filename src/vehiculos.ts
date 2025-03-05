@@ -45,6 +45,17 @@ export abstract class Vehiculo {
         return this.cilindrada
     }
 
+    setMatricula(nueva: string) : void {
+        this.matricula = nueva
+    }
+    setMarca(nueva: string) : void {
+        this.marca = nueva
+    }
+    setAltura(nueva: number) : void {
+        this.altura = nueva
+    }
+
+
     /**
      * Función abstracta a implementar en clases hijas
      * @return Muestra toda la información del vehiculo. 
@@ -85,6 +96,13 @@ export class Coche extends Vehiculo{
      */
     getEspacioMaletero() : number {
         return this.espacioMaletero
+    }
+
+    setNPuertas(nueva: number) : void {
+        this.n_puertas = nueva
+    }
+    setEspacioMaletero(nueva: number) : void {
+        this.espacioMaletero = nueva
     }
 
     /**
@@ -131,6 +149,13 @@ export class Moto extends Vehiculo{
          */
         getChaqueta() {
             return this.colorChaqueta
+        }
+
+        setPata(nueva: boolean) : void {
+            this.pataCabra = nueva
+        }
+        setChaqueta(nueva: string) : void {
+            this.colorChaqueta = nueva
         }
 
     /**
